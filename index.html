@@ -21,32 +21,32 @@
     <div id="map"></div>
 
     <script>
-        var map = L.map('map').setView([51.505, -0.09], 13);
+        var map = L.map('map').setView([-13.532, -71.967], 13); // Updated coordinates for Cusco, Peru
 
         L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 19,
             attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
         }).addTo(map);
 
-        var marker = L.marker([51.5, -0.09]).addTo(map);
-        var circle = L.circle([51.508, -0.11], {
+        var marker = L.marker([-13.532, -71.967]).addTo(map); // Updated marker coordinates
+        var circle = L.circle([-13.528, -71.967], { // Updated circle coordinates
             color: 'red',
             fillColor: '#f03',
             fillOpacity: 0.5,
             radius: 500
         }).addTo(map);
         var polygon = L.polygon([
-            [51.509, -0.08],
-            [51.503, -0.06],
-            [51.51, -0.047]
-        ]).addTo(map);
+            [-13.533, -71.966],
+            [-13.529, -71.964],
+            [-13.530, -71.969]
+        ]).addTo(map); // Updated polygon coordinates
 
         marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
         circle.bindPopup("I am a circle.");
         polygon.bindPopup("I am a polygon.");
 
         var popup = L.popup()
-            .setLatLng([51.513, -0.09])
+            .setLatLng([-13.528, -71.966])
             .setContent("I am a standalone popup.")
             .openOn(map);
 
